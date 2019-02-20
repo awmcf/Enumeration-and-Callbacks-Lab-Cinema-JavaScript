@@ -13,12 +13,13 @@ Cinema.prototype.findFilmByTitle = function (title) {
 return total;
 }
 
-module.exports = Cinema;
+Cinema.prototype.findFilmByGenre = function (genre) {
+  const total = this.films.filter( function (film) {
+    return film.genre === genre
+  });
+  return total;
+}
 
-// for (const film of this.films) {
-//   if (film.title === title) {
-//     foundFilms.push(film);
-//   }
-// }
-// return foundFilms;
-// }
+
+
+module.exports = Cinema;
